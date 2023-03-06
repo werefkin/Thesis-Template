@@ -1,0 +1,35 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\chapter{Dummy chapter name}\label{ch:chapter_3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+\lipsum[2-4]
+
+
+\section{Section}
+
+\lipsum[1-3]
+
+Look up here~\cite{Zorin:22}.
+
+
+\begin{figure}[ht]
+\centering
+    \begin{subfigure}{0.7\columnwidth}
+    \includegraphics[width=1\columnwidth]{example-image-a}
+      \caption*{}
+    \end{subfigure}
+    \caption{Caption 3.}
+  \begin{tikzpicture}[overlay,thick]
+      \draw [red] (-5.5,1) grid (5.5,10);
+      \draw[help lines,xstep=.5,ystep=.5] (-5.5,1) grid (5.5,10);
+      \foreach \x in {-5,-4,...,5} { \node [anchor=north] at (\x,1) {\x}; }
+      \foreach \y in {1,2,...,10} { \node [anchor=east] at (-5.5,\y) {\y}; }
+    \end{tikzpicture}
+    \label{fig:fig_3-1}
+\end{figure}
+
+\lipsum[3-4]
+
+
+\end{document}
