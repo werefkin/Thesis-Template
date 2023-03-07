@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Masters/Doctoral Thesis The grammar has been double checked using RegEx expressions from  https://nonfictionauthorsassociation.com/using-regular-expressions-to-find-common-errors-guest-post-by-russell-phillips/
+% Masters/Doctoral Thesis The grammar has been double-checked using RegEx expressions from  https://nonfictionauthorsassociation.com/using-regular-expressions-to-find-common-errors-guest-post-by-russell-phillips/
 % to find repeated words \b(\w+)\b( .{0,10})\b\1\b was used 
 % LaTeX Template
 % Version 2.5 (27/8/17)
@@ -16,6 +16,9 @@
 %
 % Template license:
 % CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%
+% was adapted by I. Zorin
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -41,29 +44,13 @@ consistentlayout, % Uncomment to change the layout of the declaration, abstract 
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
 \usepackage{lipsum}  
-
-\usepackage[Lenny]{fncychap}
-% \ChNameVar{\fontsize{14}{16}\usefont{OT1}{phv}{m}{n}\selectfont}
-\ChNameVar{\bf}
+\usepackage[Lenny]{fncychap} %Lets make beautiful chapters
+\ChNameVar{\bf} % Chapter name variable
 \usepackage{romannum}
 \usepackage{listings}
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
-% \lstset{
-% 	language=python,
-% 	otherkeywords={self},             % Add keywords here
-% 	keywordstyle=\color{blue},
-% 	breaklines=true,%
-% 	emph={MyClass,__init__},          % Custom highlighting
-% 	emphstyle=\color{red},    % Custom highlighting style
-% 	stringstyle=\color{mylilas},
-% 	%	frame=tb,                         % Any extra options here
-% 	showstringspaces=false            %
-% 	numbers=left,%
-% 	numberstyle={\tiny \color{black}},% size of the numbers 
-% 	commentstyle=\color{mygreen},%
-
-% }
+%Python code listings settings:
 \lstset{
 language=Python,
 basicstyle=\ttfamily\footnotesize,
@@ -99,51 +86,20 @@ commentstyle=\color{mygreen}
 % \hyphenation{Ar-beiter=Unfall-ver-si-che-rung}
 % \usepackage{physics}
 \usepackage{hyphenat}
-\lccode`\'=39\hyphenation{mid'-in-fra-red}
-
+\lccode`\'=39\hyphenation{mid'-in-fra-red} %hyphenation rules
 \interfootnotelinepenalty=10000
+\DeclareSIUnit\angstrom{\text {Å}} %declaration rule for angstrom 
 
 %TITLE SETTINGS
 \makeatletter
-% \ChNameVar{\Large\rm} % sets the style for name
-% \ChNumVar{\Huge} % sets the style for digit
-% \ChTitleVar{\Large\rm\centering} % sets the style for title
-% \ChRuleWidth{4pt} % Set RW=4pt
-% \ChNameUpperCase % Make name uppercase
-% \renewcommand{\DOCH}{%
-% \setlength{\fboxrule}{\RW} % Let fbox lines be controlled by
-% % \ChRuleWidth
-% \fbox{\CNV\FmN{\@chapapp}\space \CNoV\thechapter}\par\nobreak
-% \vskip 40\p@}
-% 8
-% \renewcommand{\DOTI}[1]{%
-% \CTV\FmTi{#1}\par\nobreak
-% \vskip 40\p@}
 \renewcommand{\DOTIS}[1]{%
 \CTV\FmTi{#1}\par\nobreak
 \vskip -40pt}
 \ChTitleVar{\Huge\rm\bf}
-\DeclareSIUnit\angstrom{\text {Å}}
-% \ChNameVar{\fontsize{14}{16}\usefont{OT1}{phv}{m}{n}\selectfont}
+
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
-
-% %% Set the paper size to 17 by 24 cm, approximately halfway between A4 and A5.
-% \if@print
-%     %% In print mode we add a 3 mm bleed on the outside of the page.
-%     \geometry{
-%         papersize = {173mm,246mm},
-%         layoutsize = {167mm,240mm},
-%         layoutoffset = {3mm,3mm},
-%         bindingoffset = -3mm
-%     }
-% \else
-%     \geometry{papersize={170mm,240mm}}
-% \fi
-% %% We decrease the margins slightly from the default (scale = 0.7).
-% \geometry{hscale=0.75,vscale=0.8}
-
 
 \geometry{
 	paper=a4paper, % Change to letterpaper for US letter
@@ -170,13 +126,16 @@ commentstyle=\color{mygreen}
 \keywords{Mid-infrared, optical coherence tomography} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
 \university{\href{https://www.tuwien.at/en/}{Vienna University of Technology}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
 \department{{Faculty of Fun}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
-\group{\href{https://en.wikipedia.org/wiki/Sigmund_Freud}{University of Vienna International Psychoanalytical Association}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
-\faculty{\href{https://en.wikipedia.org/wiki/Sigmund_Freud}{University of Vienna International Psychoanalytical Association}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+\group{\href{https://en.wikipedia.org/wiki/Sigmund_Freud}{University of Vienna, International Psychoanalytical Association}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{\href{https://en.wikipedia.org/wiki/Sigmund_Freud}{University of Vienna International, Psychoanalytical Association}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
 
 \AtBeginDocument{
 \hypersetup{pdftitle={Disseration: Thesis title | Sigmund Freud | 2020}} % Set the PDF's title to your title
 \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
 \hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+
+
+
 %Preambule my packages
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
@@ -193,13 +152,10 @@ commentstyle=\color{mygreen}
 \renewcommand{\thesubfigure}{(\alph{subfigure})}
 \captionsetup[sub]{labelformat=simple}
 \usepackage{textgreek}
-% \usepackage{gensymb}
 \usepackage[hang]{footmisc}
-% \usepackage{cite}
 \usepackage{cleveref}
 \usepackage{mathrsfs,amsmath}
 \usepackage{pifont}
-
 }
 
 
@@ -236,12 +192,7 @@ commentstyle=\color{mygreen}
 \end{figure}
 
 
-%\vspace*{.06\textheight}
-%{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
-%{\LARGE \univname\par}\vspace{1.5cm} % University name
-% \textsc{\huge Diplomarbeit}\\[0.5cm] % Thesis type
 
-%\HRule \\[0.4cm] % Horizontal line
 {\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
 %\HRule \\[1.5cm] % Horizontal line
 
@@ -295,20 +246,6 @@ Student number: XXX-XXX% Author name - remove the \href bracket to remove the li
 
 {\today}\\
 Wien
-
-%\normalsize
-%{Wien, XX. XX 2020}\hfill
-%\begin{flushleft}
-%{\today}\\ % Date
-%\includegraphics{Logo} % University/department logo - uncomment to place it
-%\end{flushleft}
-\vfill{}
-\vfill{}
-% \begin{flushright}
-% \rule{4.08cm}{0.8pt}\\
-% \normalsize
-% Signature student
-% \end{flushright} 
  
 \vfill
 \end{center}
@@ -318,13 +255,12 @@ Wien
 %	DECLARATION PAGE
 %----------------------------------------------------------------------------------------
 
+% Uncomment if the declaration page is necessary (either in German or in English)
 % \begin{otherlanguage}{ngerman}
 % \begin{declaration}
 % % \singlespacing
 % \vspace{10pt}
 
-
-% % Ich erkläre an Eides statt, dass ich die vorliegende Dissertation selbständig und ohne fremde Hilfe verfasst, andere als die angegebenen Quellen und Hilfsmittel nicht benutyt byw. die wörtlich oder sinngemäß entnommenen Stellen als solche kenntlich gemacht habe. Die vorliegende Dissertation ist mit dem elektronish übermittelten Textdokument identisch.
 
 % Ich erkläre an Eides statt, dass ich die vorliegende Dissertation selbstständig und ohne fremde Hilfe verfasst, andere als die angegebenen Quellen und Hilfsmittel nicht benutzt bzw. die wörtlich oder sinngemäß entnommenen Stellen als solche kenntlich gemacht habe. 
 % Die vorliegende Dissertation ist mit dem elektronish übermittelten Textdokument identisch.
@@ -351,11 +287,7 @@ Wien
 % \cleardoublepage
 % \end{otherlanguage}
 
-%----------------------------------------------------------------------------------------
-%	QUOTATION PAGE
-%----------------------------------------------------------------------------------------
 
-% \vspace*{0.2\textheight}
 
 
 %----------------------------------------------------------------------------------------
@@ -365,6 +297,12 @@ Wien
 \dedicatory{\textbf{Dedicated to ... \ldots}
 % \scalebox{.8}[1.0]{\textbf{Dedicated to my family, my wife and my star Adelaida\ldots}}
 } 
+
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+
 \newpage
 
 \checktoopen
@@ -375,7 +313,7 @@ Neither do I believe that the spirit of adventure runs any risk of disappearing 
 \hfill \textsc{Marie Skłodowska Curie}
 
 %----------------------------------------------------------------------------------------
-%	ABSTRACT PAGE
+%	ABSTRACT PAGE - English version
 %----------------------------------------------------------------------------------------
 % \makeatletter
 % \def\abskeywords{\xdef\@thefnmark{}\@footnotetext}
@@ -395,12 +333,17 @@ Neither do I believe that the spirit of adventure runs any risk of disappearing 
 \clearpage
 \end{abstract}
 
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE - German version
+%----------------------------------------------------------------------------------------
+
 \begin{otherlanguage}{ngerman}
 \begin{kurzfassung}
 \singlespacing
 
-Deutsch Variante
-\lipsum[1-4]
+Deutsche Variante oida
+
+\lipsum[1-3]
 
 
 
@@ -444,6 +387,7 @@ Deutsch Variante
 \textbf{IR} & \textbf{I}nfra\textbf{r}ed\\
 \end{abbreviations}
 
+%%Uncomment if needed
 %----------------------------------------------------------------------------------------
 %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
 %----------------------------------------------------------------------------------------
@@ -499,10 +443,6 @@ Deutsch Variante
 \subfile{Chapters/Chapter5}
 \subfile{Chapters/Conclusions}
 
-%\include{Chapters/Chapter2} 
-%\include{Chapters/Chapter3}
-%\include{Chapters/Chapter4} 
-%\include{Chapters/Chapter5} 
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
